@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de la facture</title>
+</head>
+<body>
+        <form th:action="@{/invoice}" method="post" th:object="${invoice}">
+            <p>Customer name<input type="text" th:field="*{customerName}"/></p>
+            <p>Order number<input type="text" th:field="*{orderNumber}"/></p>
+            <input type="submit" value="OK">
+        </form>
+</body>
+</html>
