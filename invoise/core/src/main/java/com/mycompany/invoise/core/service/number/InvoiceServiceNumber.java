@@ -3,17 +3,18 @@ package com.mycompany.invoise.core.service.number;
 import com.mycompany.invoise.core.entity.Invoice;
 import com.mycompany.invoise.core.repository.InvoiceRepositoryInterface;
 import com.mycompany.invoise.core.service.InvoiceServiceInterface;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * @author k.milet
  */
-//@Service
+@Service
 public class InvoiceServiceNumber implements InvoiceServiceInterface {
 
-    private static long lastNumber = 0L;
-
+    @Autowired
     private InvoiceRepositoryInterface invoiceRepository;
 
     public InvoiceRepositoryInterface getInvoiceRepository() {
@@ -35,8 +36,6 @@ public class InvoiceServiceNumber implements InvoiceServiceInterface {
     }
 
     public Invoice createInvoice(Invoice invoice) {
-        invoice.setNumber(String.valueOf(++lastNumber));
-        invoiceRepository.create(invoice);
-        return invoice;
+        return invoiceRepository.create(invoice);
     }
 }

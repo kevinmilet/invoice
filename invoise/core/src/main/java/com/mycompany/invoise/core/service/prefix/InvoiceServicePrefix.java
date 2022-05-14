@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author k.milet
  */
-@Service
+//@Service
 public class InvoiceServicePrefix implements InvoiceServiceInterface {
 
     @Value("${invoice.lastNumber}")
