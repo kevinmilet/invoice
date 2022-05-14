@@ -31,17 +31,17 @@ public class InvoiceControllerWeb {
         this.invoiceService = invoiceService;
     }
 
-//    @PostMapping("")
-//    public String createInvoice(@Valid @ModelAttribute InvoiceForm invoiceForm, BindingResult results) {
-//        if (results.hasErrors()) {
-//            return "invoice-create-form";
-//        }
-//        Invoice invoice = new Invoice();
-//        invoice.setCustomerName(invoiceForm.getCustomerName());
-//        invoice.setOrderNumber(invoiceForm.getOrderNumber());
-//        invoiceService.createInvoice(invoice);
-//        return "invoice-created";
-//    }
+    @PostMapping("/create")
+    public String createInvoice(@Valid @ModelAttribute InvoiceForm invoiceForm, BindingResult results) {
+        if (results.hasErrors()) {
+            return "invoice-create-form";
+        }
+        Invoice invoice = new Invoice();
+        invoice.setCustomerName(invoiceForm.getCustomerName());
+        invoice.setOrderNumber(invoiceForm.getOrderNumber());
+        invoiceService.createInvoice(invoice);
+        return "invoice-created";
+    }
 
     @GetMapping("/home")
     public String displayHome(Model model) {
