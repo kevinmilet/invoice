@@ -9,7 +9,7 @@ import java.util.List;
  * @author k.milet
  */
 public interface InvoiceServiceInterface {
-    void createInvoice(Invoice invoice);
+    Invoice createInvoice(Invoice invoice);
     void setInvoiceRepository(InvoiceRepositoryInterface invoiceRepository);
     List<Invoice> getInvoiceList();
     Invoice getInvoiceByNumber(String number);
