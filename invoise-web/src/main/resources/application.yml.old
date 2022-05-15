@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/invoise?useSSL=false
+    password: ''
+    initialization-mode: always
+  jpa:
+    properties:
+      hibernate:
+        format_sql: 'true'
+    show-sql: 'true'
+    generate-ddl: 'false'
+invoice:
+  prefix: INV_
+  lastNumber: '184'
+server:
+  servlet:
+    context-path: /invoise

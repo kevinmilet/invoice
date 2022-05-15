@@ -6,8 +6,6 @@ import com.mycompany.invoise.core.service.InvoiceServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 /**
  * @author k.milet
  */
@@ -21,21 +19,25 @@ public class InvoiceServiceNumber implements InvoiceServiceInterface {
         return invoiceRepository;
     }
 
-    public void setInvoiceRepository(InvoiceRepositoryInterface invoiceRepository) {
-        this.invoiceRepository = invoiceRepository;
+    public void setInvoiceRepository(InvoiceRepositoryInterface invoiceRepositoryInterface) {
+        this.invoiceRepository = invoiceRepositoryInterface;
     }
 
     @Override
-    public List<Invoice> getInvoiceList() {
-        return invoiceRepository.list();
+    public Iterable<Invoice> getInvoiceList() {
+        Iterable<Invoice> invoices = invoiceRepository.findAll();
+        // Permet d'initailiser le cilent de chaque facture
+        invoices.forEach(invoice -> invoice.getCustomer().getName());
+
+        return invoices;
     }
 
     @Override
     public Invoice getInvoiceByNumber(String number) {
-        return invoiceRepository.getById(number);
+        return invoiceRepository.findById(number).orElseThrow();
     }
 
     public Invoice createInvoice(Invoice invoice) {
-        return invoiceRepository.create(invoice);
+        return invoiceRepository.save(invoice);
     }
 }

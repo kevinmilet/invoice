@@ -36,7 +36,7 @@ public class InvoiceResource {
     }
 
     @GetMapping
-    public List<Invoice> list() {
+    public Iterable<Invoice> list() {
         return invoiceService.getInvoiceList();
     }
 

@@ -11,6 +11,6 @@ import java.util.List;
 public interface InvoiceServiceInterface {
     Invoice createInvoice(Invoice invoice);
     void setInvoiceRepository(InvoiceRepositoryInterface invoiceRepository);
-    List<Invoice> getInvoiceList();
+    Iterable<Invoice> getInvoiceList();
     Invoice getInvoiceByNumber(String number);
 }
