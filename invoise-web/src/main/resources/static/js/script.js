@@ -54,7 +54,8 @@ function showDetail(invoiceNumber){
         invoiceDetailNode.appendChild(p);
 
         p = document.createElement("p");
-        text = document.createTextNode(`Customer name: ${res.customer.name}`);
+        console.log(res);
+        text = document.createTextNode(`Customer name: ${res.customer}`);
         p.appendChild(text);
         invoiceDetailNode.appendChild(p);
 
