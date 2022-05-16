@@ -1,8 +1,8 @@
 package com.mycompany.invoise.invoiseweb.controller;
 
-import com.mycompany.invoise.core.entity.Address;
-import com.mycompany.invoise.core.entity.Customer;
-import com.mycompany.invoise.core.entity.Invoice;
+import com.mycompany.invoise.core.entity.customer.Address;
+import com.mycompany.invoise.core.entity.customer.Customer;
+import com.mycompany.invoise.core.entity.invoice.Invoice;
 import com.mycompany.invoise.core.service.InvoiceServiceInterface;
 import com.mycompany.invoise.invoiseweb.form.InvoiceForm;
 import org.springframework.beans.factory.annotation.Autowired;

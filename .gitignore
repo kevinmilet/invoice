@@ -1,3 +1,6 @@
 /.idea/
 /invoise-web/target/
 /core/target/
+/invoice/target/
+/customer/target/
+/product/target/
